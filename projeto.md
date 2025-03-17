@@ -46,3 +46,15 @@ Para resolver esse desafio, recomenda-se o uso dos seguintes recursos:
 📌 **Programação Funcional:** Uso de `Streams`, `Optional` e `Predicate` para processar e validar as tarefas.  
 📌 **Execução Assíncrona:** Uso de `CompletableFuture` para implementar notificações automáticas.  
 ```
+
+Minhas anotações:
+
+localdate para datas - sem horários.
+enum para status
+cadastro, listar TODAS AS TAREFAS ORDENADAS POR ORDEM CRESCENTE POR DATA, filtrar (titulo e data dE VENCIMENTO)
+REGRA: Nenhuma tarefa com data limite no passado, checar data atual ou futura
+ordenar quando fazer a listagem
+validação na entrada de dados; titulo com 20 caracteres, toda tarefa tem que salva com status
+pode utilizar console,, e utilizar scanner.
+--> PLUS -> serviço em background, notificações inteligentes,, vai ate o banco de dados e busca as tarefas de hoje.
+
