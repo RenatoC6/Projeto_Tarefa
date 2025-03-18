@@ -1,3 +1,4 @@
+import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -17,18 +18,47 @@ public class GerenciadorTarefa {
     }
 
 
-    public void cadastrarTarefa(){
+    public void cadastrarTarefa() {
 
-        System.out.print("Digite o titulo da tarefa: ");
-        String titulo = scanner.nextLine();
+        String titulo;
+
+        while(true) {
+            System.out.print("Digite o titulo da tarefa: ");
+            titulo = scanner.nextLine();
+            if (titulo.length() < 10) {
+                System.out.println("*** Informe um titulo com mais de 10 caracters **");
+            } else break;
+        }
+
         System.out.print("Digite o descrição da tarefa: ");
         String descricao = scanner.nextLine();
-        System.out.print("Digite o data limite da tarefa: (dd/MM/yy");
-        String dataLimiteString = scanner.nextLine();
-        LocalDate dataLimite = LocalDate.parse(dataLimiteString,formatter);
 
-        Tarefa tarefa = new Tarefa(titulo, descricao,dataLimite,StatusTarefa.PENDENTE);
-        tarefas.add(tarefa);
+        LocalDate dataHoje = LocalDate.now();
+
+        while (true) {
+            System.out.print("Digite o data (dd/MM/yy) limite da tarefa: ");
+            String dataLimiteTexto = scanner.nextLine();
+
+            try {
+                LocalDate dataLimite = LocalDate.parse(dataLimiteTexto, formatter);
+
+                if (dataLimite.isBefore(dataHoje)) {
+                    System.out.println("*** Data Invalida. A Data não pode ser menor que hoje **");
+                } else {
+
+                    Tarefa tarefa = new Tarefa(titulo, descricao, dataLimite, StatusTarefa.PENDENTE);
+                    tarefas.add(tarefa);
+
+                    System.out.println("*** Tarefa cadastrada com sucesso !!! **");
+                    break;
+                }
+
+            } catch (DateTimeException e) {
+                System.out.println("*** Formato da data invalido (dd/MM/yy) **");
+            }
+
+
+        }
     }
 
     public void FiltrarTarefas(){

@@ -11,10 +11,10 @@ public class Main {
             System.out.println("==========================================");
             System.out.println("1. Cadastrar tarefa");
             System.out.println("2. Filtrar tarefas por Status");
-            System.out.println("3. Listar tarefas Ordenas por data");
+            System.out.println("3. Listar tarefas Ordenadas por data Limite");
             System.out.println("4. Sair");
             System.out.print("Digite a opção desejada: ");
-            System.out.println("==========================================");
+
             Scanner sc = new Scanner(System.in);
             int opcao = sc.nextInt();
             sc.nextLine(); // Consumir o caractere de newline
