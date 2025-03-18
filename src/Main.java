@@ -32,7 +32,7 @@ public class Main {
                     System.out.println("Saindo...");
                     return;
                 default:
-                    System.out.println("Opção inválida!");
+                    System.out.println("*** Opção inválida! **");
             }
         }
 

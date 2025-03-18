@@ -26,7 +26,7 @@ public class GerenciadorTarefa {
             System.out.print("Digite o titulo da tarefa: ");
             titulo = scanner.nextLine();
             if (titulo.length() < 10) {
-                System.out.println("*** Informe um titulo com mais de 10 caracters **");
+                System.out.println("*** Informe um titulo com mais de 10 caracters ***");
             } else break;
         }
 
@@ -49,12 +49,12 @@ public class GerenciadorTarefa {
                     Tarefa tarefa = new Tarefa(titulo, descricao, dataLimite, StatusTarefa.PENDENTE);
                     tarefas.add(tarefa);
 
-                    System.out.println("*** Tarefa cadastrada com sucesso !!! **");
+                    System.out.println("*** Tarefa cadastrada com sucesso !!! ***");
                     break;
                 }
 
             } catch (DateTimeException e) {
-                System.out.println("*** Formato da data invalido (dd/MM/yy) **");
+                System.out.println("*** Formato da data invalido (dd/MM/yy) ***");
             }
 
 
