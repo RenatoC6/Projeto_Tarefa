@@ -5,17 +5,6 @@ public class Tarefa {
     private String titulo;
     private String descricao;
     private LocalDate dataLimite;
-
-    @Override
-    public String toString() {
-        return "Tarefa{" +
-                "titulo='" + titulo + '\'' +
-                ", descricao='" + descricao + '\'' +
-                ", dataLimite=" + dataLimite +
-                ", statusTarefa=" + statusTarefa +
-                '}';
-    }
-
     private StatusTarefa statusTarefa;
 
     public Tarefa(String titulo, String descricao, LocalDate dataLimite, StatusTarefa statusTarefa) {
@@ -56,4 +45,16 @@ public class Tarefa {
     public void setStatusTarefa(StatusTarefa statusTarefa) {
         this.statusTarefa = statusTarefa;
     }
+
+    @Override
+    public String toString() {
+        return "Tarefa{" +
+                "titulo='" + titulo + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", dataLimite=" + dataLimite +
+                ", statusTarefa=" + statusTarefa +
+                '}';
+    }
+
+
 }
