@@ -9,5 +9,4 @@ public interface GerenciadorDeTarefas {
     void listarTarefasPorStatus(StatusTarefa Status);
     boolean buscarTarefaPorTitulo(String titulo);
 
-
 }

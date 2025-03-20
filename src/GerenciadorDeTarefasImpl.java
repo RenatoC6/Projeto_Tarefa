@@ -9,7 +9,6 @@ public class GerenciadorDeTarefasImpl implements GerenciadorDeTarefas {
         this.tarefas = new ArrayList<>();
     }
 
-
     @Override
     public void InserirTarefaLista(Tarefa tarefa) {
         tarefas.add(tarefa);
