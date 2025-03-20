@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +19,7 @@ public class GerenciadorDeTarefasImpl implements GerenciadorDeTarefas {
     @Override
     public void alterarStatusTarefa(String titulo, StatusTarefa novoStatus) {
         for (Tarefa tarefas : tarefas) {
-            if (tarefas.getTitulo().equals(titulo)) {
+           if (tarefas.getTitulo().equals(titulo)) {
                 tarefas.setStatusTarefa(novoStatus);
                 System.out.println("Status da tarefa alterado com sucesso!");
                 return;
@@ -41,7 +43,9 @@ public class GerenciadorDeTarefasImpl implements GerenciadorDeTarefas {
         System.out.println("Tarefas com status " + statusNovo + ":");
         for (Tarefa tarefa : tarefas) {
             if (tarefa.getStatusTarefa() == statusNovo) {
-                System.out.println(tarefa);
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yy");
+                String dataLimiteTexto = tarefa.getDataLimite().format(formatter);
+                System.out.println("Tarefa: " + tarefa.getTitulo() + " Descricao: " + tarefa.getDescricao() +  " Data Limite: " + dataLimiteTexto + " Status: " + tarefa.getStatusTarefa());
                 count += 1;
             }
         }

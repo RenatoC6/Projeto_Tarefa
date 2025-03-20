@@ -1,7 +1,5 @@
 
 
-
-
 public interface GerenciadorDeTarefas {
     void InserirTarefaLista(Tarefa tarefa);
     void alterarStatusTarefa(String titulo, StatusTarefa novoStatus);
