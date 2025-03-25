@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 
+// Tarefa
 public class Tarefa {
 
     private String titulo;
